@@ -1,1 +1,5 @@
-{/* <Notification message="There is no feedback"></Notification> */}
+
+
+export const Notification = ({ message }) => (
+    <p>{message}</p>
+);
