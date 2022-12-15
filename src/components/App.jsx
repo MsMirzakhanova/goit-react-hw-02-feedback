@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { Section } from './Section/Section';
+import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
-import { Section } from './Section/Section';
+
 
 
 
@@ -13,22 +15,15 @@ export class App extends Component {
     bad: 0
   };
 
-    handleIncrementGood = (event) => {
-        this.setState((prevState) => ({
-            good: prevState.good + 1,
-        }),
-        console.log(event));
-    };
-    handleIncrementNeutral = () => {
-        this.setState((prevState) => ({
-            neutral: prevState.neutral + 1,
-        }));
-    };
-    handleIncrementBad = () => {
-        this.setState((prevState) => ({
-            bad: prevState.bad + 1,
-        }));
-    };
+  handleFeedback = e => {
+    if (e === 'Good') {
+      this.setState({ good: this.state.good + 1 });
+    } else if (e === 'Neutral') {
+      this.setState({ neutral: this.state.neutral + 1 });
+    } else if (e === 'Bad') {
+      this.setState({ bad: this.state.bad + 1 });
+    }
+  };
 
    countTotalFeedback = () => {
         return this.state.good + this.state.neutral + this.state.bad;
@@ -42,17 +37,16 @@ export class App extends Component {
         return Math.round((this.state.good / this.countTotalFeedback()) * 100);
     }
 
-
     render() {
       return (
 
             <div>
-                <h1>Please leave feedback</h1>
-                <div>
-                    <button type="button" onClick={this.handleIncrementGood}>Good</button>
-                    <button type="button" onClick={this.handleIncrementNeutral}>Neutral</button>
-                    <button type="button" onClick={this.handleIncrementBad}>Bad</button>
-          </div>
+        <Section title="Please leave feedback">
+          <FeedbackOptions
+            options={['Good', 'Neutral', 'Bad']}
+            onLeaveFeedback={this.handleFeedback}
+          />{' '}
+        </Section>
           <Section title="Statistics">
           {this.countTotalFeedback() !==0 ? (
             <Statistics
