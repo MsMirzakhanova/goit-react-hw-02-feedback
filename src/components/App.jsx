@@ -1,6 +1,7 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { Statistics } from './Statistics/Statistics';
-import {Notification} from './Notification/Notification'
+import { Notification } from './Notification/Notification';
+import { Section } from './Section/Section';
 
 
 
@@ -52,6 +53,7 @@ export class App extends Component {
                     <button type="button" onClick={this.handleIncrementNeutral}>Neutral</button>
                     <button type="button" onClick={this.handleIncrementBad}>Bad</button>
           </div>
+          <Section title="Statistics">
           {this.countTotalFeedback() !==0 ? (
             <Statistics
               good={this.state.good}
@@ -59,7 +61,8 @@ export class App extends Component {
               bad={this.state.bad}
               total={this.countTotalFeedback()}
               positivePercentage={this.countPositiveFeedbackPercentage()}/>
-          ):(<Notification message="There is no feedback" />)}
+          ) : (<Notification message="There is no feedback" />)}
+        </Section>
           </div>
         );
     }
