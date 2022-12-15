@@ -1,18 +1,21 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
+import { Statistics } from './Statistics/Statistics';
 
 
 
 export class App extends Component {
 
-    state = {
-        good: 0,
-        neutral: 0,
-        bad: 0
-    }
-    handleIncrementGood = () => {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0
+  };
+
+    handleIncrementGood = (event) => {
         this.setState((prevState) => ({
             good: prevState.good + 1,
-        }));
+        }),
+        console.log(event));
     };
     handleIncrementNeutral = () => {
         this.setState((prevState) => ({
@@ -39,25 +42,22 @@ export class App extends Component {
 
 
     render() {
-        return (
+      return (
+
             <div>
                 <h1>Please leave feedback</h1>
                 <div>
                     <button type="button" onClick={this.handleIncrementGood}>Good</button>
                     <button type="button" onClick={this.handleIncrementNeutral}>Neutral</button>
                     <button type="button" onClick={this.handleIncrementBad}>Bad</button>
-                </div>
-                <div>
-                    <h1>Statistics</h1>
-                    <div>
-                        <p>Good: <span>{this.state.good}</span></p>
-                        <p>Neutral: <span>{this.state.neutral}</span></p>
-                        <p>Bad: <span>{this.state.bad}</span></p>
-                        <p>Total: {this.countTotalFeedback()}</p>
-                        <p>Positive feedback: {this.countPositiveFeedbackPercentage()}%</p>
-                    </div>
-                </div>
             </div>
-        )
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}/>
+            </div>
+        );
     }
 }
