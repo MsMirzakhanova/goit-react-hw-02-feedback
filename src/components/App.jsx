@@ -39,8 +39,18 @@ export class App extends Component {
 
     render() {
       return (
-
-            <div>
+        <div
+        style={{
+          height: '100vh',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          fontSize: 40,
+          color: '#010101',
+          backgroundColor: 'grey',
+        }}
+      >
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={['Good', 'Neutral', 'Bad']}
