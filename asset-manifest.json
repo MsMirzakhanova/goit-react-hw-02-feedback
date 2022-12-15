@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/MsMirzakhanova.io/goit-react-hw-02-feedback.git/static/css/main.176682e1.css",
-    "main.js": "/MsMirzakhanova.io/goit-react-hw-02-feedback.git/static/js/main.93a16c0c.js",
+    "main.css": "/MsMirzakhanova.io/goit-react-hw-02-feedback.git/static/css/main.5926f483.css",
+    "main.js": "/MsMirzakhanova.io/goit-react-hw-02-feedback.git/static/js/main.df334e0e.js",
     "index.html": "/MsMirzakhanova.io/goit-react-hw-02-feedback.git/index.html",
-    "main.176682e1.css.map": "/MsMirzakhanova.io/goit-react-hw-02-feedback.git/static/css/main.176682e1.css.map",
-    "main.93a16c0c.js.map": "/MsMirzakhanova.io/goit-react-hw-02-feedback.git/static/js/main.93a16c0c.js.map"
+    "main.5926f483.css.map": "/MsMirzakhanova.io/goit-react-hw-02-feedback.git/static/css/main.5926f483.css.map",
+    "main.df334e0e.js.map": "/MsMirzakhanova.io/goit-react-hw-02-feedback.git/static/js/main.df334e0e.js.map"
   },
   "entrypoints": [
-    "static/css/main.176682e1.css",
-    "static/js/main.93a16c0c.js"
+    "static/css/main.5926f483.css",
+    "static/js/main.df334e0e.js"
   ]
 }
