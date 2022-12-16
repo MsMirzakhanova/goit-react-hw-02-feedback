@@ -12,7 +12,7 @@ font-weight: 500;
 }
 
 .feedbackBtn:focus,
-.hero__button:hover {
+.hfeedbackBtn:hover {
     background-color: #188ce8;
 }
 
